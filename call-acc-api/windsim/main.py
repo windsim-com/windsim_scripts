@@ -11,33 +11,11 @@ from azure.storage.fileshare import ShareFileClient, ShareDirectoryClient
 from .login.Login import Login
 from .project import Project
 import os
+from .map import MapUtil
 from .domainDiscretization.FishNetUTM import FishNetUTM
 from .map.GenerateJson import GenerateJson
 
-def submit_map_api(token, project_id: str, code:str):
-    url = f"https://func-mapapi-test-westeurope.azurewebsites.net/api/Terrain/GenerateGwsFile?code={code}"
-    headers = {
-        "Content-Type": "application/json; charset=utf-8",
-        "Authorization": f"Bearer {token}"
-    }
-    with open('./map_request.json', 'r') as file:
-        data = json.load(file)
-        print(data)
-        data['projectId'] = str(project_id)
-        data['id'] = str(project_id)
-        # start_spinner("Generating GWS file...")
 
-        response = requests.post(url, json=data, headers=headers, verify=False)
-    if response.status_code == 200:
-        print(response)
-        # stop_spinner()
-        return response.json()
-    if response.status_code == 202:
-        print(f"SubmitJob accepted: {response.status_code}")
-        return response.json()
-    else:
-        print(f"SubmitJob failed: {response.status_code} - {response.text}")
-        return None
 
 
 
@@ -63,37 +41,7 @@ def get_project_upload_uri(token, project_id):
 def generate_file_sas_url(sas_url, file_path):
     url_parts = urlparse(sas_url)
     return urlunparse((url_parts.scheme, url_parts.netloc, f"{url_parts.path}/{file_path}", url_parts.params, url_parts.query, url_parts.fragment))
-#
-# def upload_folder_to_azure_sas(sas_url, local_folder):
-#     for root, dirs, files in os.walk(local_folder):
-#         for dir_name in dirs:
-#             local_dir_path = os.path.join(root, dir_name)
-#             dest_dir_path = os.path.relpath(local_dir_path, local_folder).replace("\\", "/")
-#
-#             # Create the destination directory using the directory-specific SAS URL
-#             dir_sas_url = generate_file_sas_url(sas_url, dest_dir_path)
-#             dest_directory_client = ShareDirectoryClient.from_directory_url(dir_sas_url)
-#             dest_directory_client.create_directory()
-#
-#         for file in files:
-#             local_file_path = os.path.join(root, file)
-#             relative_path = os.path.relpath(local_file_path, local_folder).replace("\\", "/")
-#             print(f"Uploading: {relative_path}")
-#             #dest_file_path = os.path.join(dest_folder, relative_path).replace("\\", "/")
-#             #print(dest_file_path)
-#
-#             # Create the destination file client using the file-specific SAS URL
-#             file_sas_url = generate_file_sas_url(sas_url, relative_path)
-#             dest_file_client = ShareFileClient.from_file_url(file_sas_url)
-#
-#             #print(file_sas_url)
-#
-#
-#             # Upload the file
-#             with open(local_file_path, "rb") as file:
-#                 dest_file_client.upload_file(file)
-#
-#     print(f"Project {project_name} {project_id} uploaded")
+
 
 def submit_job(token, project_id, layout_file_name, project_file_name, cpu_core_count, memory_size_in_gb):
     url = f"{Config.Config.API_BASE_URL}/api/DesktopCloudHybridProject/SubmitJob"
@@ -195,7 +143,7 @@ if __name__ == "__main__":
         path = "./windsim/domainDiscretization/jsonData/"
         filepath = path + str(project_id) + '_subdomain_data.json'
         GenerateJson.save_requests_as_json(subdomain, centroid, project_id, filepath)
-        submit_map_api(token,filepath, f'')
+        MapUtil.MapUtil.submit_map_api(token,filepath, f'')
 
 
 
