@@ -66,7 +66,7 @@ class FishNetUTM:
                 subdomains.append({
                     "subdomain": subdomain_coords,
                     "refinement_area": refinement_coords,
-                    "centroid_subdomain":centroid_subdomain
+                    "centroid_subdomain":[center_y,center_x]
                 })
 
         # Create a GeoDataFrame with the intersecting grid

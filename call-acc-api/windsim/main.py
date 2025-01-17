@@ -37,12 +37,10 @@ if __name__ == "__main__":
     email = f'{os.environ.get("email")}'
     password = f'{os.environ.get("password")}'
     #
-    # for subdomain in subdomains:
-    project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
-    project_type = 1
 
-    subdomains = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 100,
-                                                    0, 100)
+
+    subdomains = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 1000,
+                                                    0, 1000)
     # variables for wind fields
     solver = 5
     sweep = 100
@@ -52,17 +50,19 @@ if __name__ == "__main__":
     login: Login = Login(config)
     token = login.login(email, password)
     print(token)
+    for subdomain in subdomains:
+        project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
+        project_type = 1
+        # 2. Create projects
+        project_id = Project.Project.add_project(token, project_name, config)
+        path = "./windsim/domainDiscretization/jsonData/"
 
-    # 2. Create projects
-    project_id = Project.Project.add_project(token, project_name, config)
-    path = "./windsim/domainDiscretization/jsonData/"
-
-    # 3. Save subdomains as json
-    filepath = path + str(project_id) + '_subdomain_data.json'
+        # 3. Save subdomains as json
+        filepath = path + str(project_id) + '_subdomain_data.json'
 
 
-    GenerateJson.save_requests_as_json(subdomains, project_id, filepath)
-    MapUtil.MapUtil.submit_map_api(token, filepath, f'{os.environ.get("functionCode")}')
+        GenerateJson.save_requests_as_json(subdomain, project_id, filepath)
+        MapUtil.MapUtil.submit_map_api(token, filepath, f'{os.environ.get("functionCode")}')
 
 # job_response = submit_job(token, str('de54e93c-d398-4723-abce-3b0b01af0455'), layout_file_name, 'HundhammerWithoutTerrain', 1, 1)
 

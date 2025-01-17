@@ -6,7 +6,6 @@ class GenerateJson:
     def save_requests_as_json(subdomain, project_id, filepath="subdomains_data.json"):
         subdomain_coords = subdomain["subdomain"]
         refinement_coords = subdomain["refinement_area"]
-        centroid = subdomain["centroid_subdomain"]
         roughness_legend_datasets = [
             {"901": {"class": "901", "color": [26, 91, 171], "edited": False, "category": "Water", "description": "Water", "roughness": 0.0003, "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGOUil7NQC5gIlvnqOZRzaOaRzVTRTMAvg4BSJ87bFIAAAAASUVORK5CYII="}},
             {"902": {"class": "902", "color": [53, 131, 33], "edited": False, "category": "Trees", "description": "Trees", "roughness": 0.5, "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGM0bVZkIBcwka1zVPOo5lHNo5qpohkAbNYBARL+8dsAAAAASUVORK5CYII="}},
@@ -72,8 +71,8 @@ class GenerateJson:
             "id": str(project_id),
             "clientId": "2a6fd063-e344-4c0e-98b6-3d028bcc9097",
             "centerPoint": {
-                "latitude": centroid.y,
-                "longitude": centroid.x
+                "latitude": subdomain["centroid_subdomain"][0],
+                "longitude": subdomain["centroid_subdomain"][1]
             },
             "roughnessLegendDatasets":roughness_legend_datasets,
             "elevation": 0,
