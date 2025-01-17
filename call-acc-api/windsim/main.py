@@ -14,6 +14,7 @@ from .project import Project
 import os
 from .map import MapUtil
 from .domainDiscretization.FishNetUTM import FishNetUTM
+from .pathDiscretization.discretizePath import discretizePath
 from .map.GenerateJson import GenerateJson
 
 status_dict = {
@@ -39,8 +40,9 @@ if __name__ == "__main__":
     #
 
 
-    subdomains = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 1000,
-                                                    0, 1000)
+    #subdomains = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 1000,
+     #                                               0, 1000)
+    subdomains = discretizePath.discretize_path_with_squares("./windsim/pathDiscretization/MainlandPath/Coast/Coast.shp", 30,15)
     # variables for wind fields
     solver = 5
     sweep = 100
