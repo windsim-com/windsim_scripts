@@ -1,16 +1,16 @@
-from ..apiconfg import Config
-
+from ..apiconfig import Config
+import requests
 
 class ModelUtil:
     @staticmethod
-    def submit_job(token, project_id):
+    def submit_job(token, project_id, subdomain):
         url = f"{Config.Config.API_BASE_URL}/api/DesktopCloudHybridProject/SubmitJob"
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {token}"
         }
         data = {
-            "projectId": "105e2e82-8028-43e3-a5e4-fc7fbb3ad64f",
+            "projectId": project_id,
             "xMin": 616348,
             "xMax": 638948,
             "yMin": 5213436,

@@ -3,7 +3,7 @@ import json
 class GenerateJson:
 
     @staticmethod
-    def save_requests_as_json(subdomain, project_id, filepath="subdomains_data.json"):
+    def save_requests_as_json(subdomain, centroid, project_id, client_id, filepath):
         subdomain_coords = subdomain["subdomain"]
         refinement_coords = subdomain["refinement_area"]
         roughness_legend_datasets = [
@@ -67,12 +67,12 @@ class GenerateJson:
             {"523": {"class": "523", "color": [230, 242, 255], "edited": False, "category": "Water bodies; marine waters;", "description": "Sea and ocean", "roughness": 0.0001, "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWN59un/fwYqASk+RkYWahkGA6MGjho4auCogaMG0spAKT5GRmoaCABYNwR7IHyFAQAAAABJRU5ErkJggg=="}}
         ]
         data = {
-            "projectId": str(project_id),
-            "id": str(project_id),
-            "clientId": "2a6fd063-e344-4c0e-98b6-3d028bcc9097",
+            "projectId": project_id,
+            "id": project_id,
+            "clientId": client_id,
             "centerPoint": {
-                "latitude": subdomain["centroid_subdomain"][0],
-                "longitude": subdomain["centroid_subdomain"][1]
+                "latitude": centroid.y,
+                "longitude": centroid.x
             },
             "roughnessLegendDatasets":roughness_legend_datasets,
             "elevation": 0,

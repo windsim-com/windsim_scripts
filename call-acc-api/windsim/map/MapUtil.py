@@ -13,9 +13,9 @@ class MapUtil:
             "Content-Type": "application/json",
             "Authorization": f"Bearer {token}"
         }
-        with open(requestFilePath, 'r') as file:
+        with open(str(requestFilePath), 'r') as file:
             data = json.load(file)
-
+            # print(data)
             # spinner = Animation()
             # spinner.start_spinner("Generating GWS file...")  # Start the spinner
 
@@ -28,10 +28,10 @@ class MapUtil:
             if response.status_code == 200:
                 return response.json()
             if response.status_code == 202:
-                print(f"SubmitJob accepted: {response.status_code}")
+                print(f"Submit map Job accepted: {response.status_code}")
                 return response.json()
             else:
-                print(f"SubmitJob failed: {response.status_code} - {response}")
+                print(f"Submit map job failed: {response.status_code} - {response}")
                 return None
 
 

@@ -16,7 +16,7 @@ from .map import MapUtil
 from .domainDiscretization.FishNetUTM import FishNetUTM
 from .pathDiscretization.discretizePath import discretizePath
 from .map.GenerateJson import GenerateJson
-
+from .model.ModelUtil import ModelUtil
 status_dict = {
     0: 'None',
     1: 'Created',
@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
     #subdomains = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 1000,
      #                                               0, 1000)
-    subdomains = discretizePath.discretize_path_with_squares("./windsim/pathDiscretization/MainlandPath/Coast/Coast.shp", 30,15)
+    subdomains, centroid = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 1000, 0, 1000)
     # variables for wind fields
     solver = 5
     sweep = 100
@@ -51,6 +51,7 @@ if __name__ == "__main__":
     # 1. login
     login: Login = Login(config)
     token = login.login(email, password)
+
     print(token)
     for subdomain in subdomains:
         project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
@@ -62,9 +63,14 @@ if __name__ == "__main__":
         # 3. Save subdomains as json
         filepath = path + str(project_id) + '_subdomain_data.json'
 
-
-        GenerateJson.save_requests_as_json(subdomain, project_id, filepath)
+        GenerateJson.save_requests_as_json(subdomain, centroid, project_id, client_id, filepath)
         MapUtil.MapUtil.submit_map_api(token, filepath, f'{os.environ.get("functionCode")}')
+
+        # 5. generate 3d model
+        # ModelUtil.submit_job(token, project_id, subdomains)
+
+
+
 
 # job_response = submit_job(token, str('de54e93c-d398-4723-abce-3b0b01af0455'), layout_file_name, 'HundhammerWithoutTerrain', 1, 1)
 

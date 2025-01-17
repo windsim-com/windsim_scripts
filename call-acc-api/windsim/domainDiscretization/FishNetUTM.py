@@ -44,9 +44,9 @@ class FishNetUTM:
             if any(poly.intersects(geom) for geom in gdf.geometry):
                 intersecting_cells.append(poly)
                 # Center of the current cell
-                centroid_subdomain = poly.centroid
-                center_x = centroid_subdomain.x
-                center_y = centroid_subdomain.y
+                center_x = poly.centroid.x
+                center_y = poly.centroid.y
+
                 # Calculate refinement area
                 half_refinement = refinement_size / 2
                 refinement_geom = geometry.Polygon([
@@ -65,8 +65,7 @@ class FishNetUTM:
                 refinement_coords = [{"latitude": lat, "longitude": lon} for lat, lon in zip(ref_ext[1], ref_ext[0])]
                 subdomains.append({
                     "subdomain": subdomain_coords,
-                    "refinement_area": refinement_coords,
-                    "centroid_subdomain":[center_y,center_x]
+                    "refinement_area": refinement_coords
                 })
 
         # Create a GeoDataFrame with the intersecting grid
@@ -91,7 +90,7 @@ class FishNetUTM:
         #     gpd.GeoSeries([refinement_geom]).boundary.plot(ax=ax, color='green', linewidth=0.5, linestyle=':')
         #     gpd.GeoSeries([sim_geom]).boundary.plot(ax=ax, color='red', linewidth=0.5, linestyle=':')
 
-        return subdomains
+        return subdomains, centroid
 
 
     #subdomains, centroid = createFishnet("C:/Users/TorsteinSaeter/source/repos/ShapeFileToFishnet/StantecAreas/StantecAreas.shp", square_size=32000, overlap_km=2,refinement_km= 30)
