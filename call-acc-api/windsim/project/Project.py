@@ -7,7 +7,6 @@ import os
 from urllib.parse import urlparse, urlunparse
 # from animation import start_spinner, stop_spinner
 from ..login import Login
-from config import Config
 import urllib3
 from ..apiconfig import Config
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)

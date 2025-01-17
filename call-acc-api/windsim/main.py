@@ -11,7 +11,8 @@ from azure.storage.fileshare import ShareFileClient, ShareDirectoryClient
 from .login.Login import Login
 from .project import Project
 import os
-
+from .domainDiscretization.FishNetUTM import FishNetUTM
+from .map.GenerateJson import GenerateJson
 
 def submit_map_api(token, project_id: str, code:str):
     url = f"https://func-mapapi-test-westeurope.azurewebsites.net/api/Terrain/GenerateGwsFile?code={code}"
@@ -19,7 +20,7 @@ def submit_map_api(token, project_id: str, code:str):
         "Content-Type": "application/json; charset=utf-8",
         "Authorization": f"Bearer {token}"
     }
-    with open('../map_request.json', 'r') as file:
+    with open('./map_request.json', 'r') as file:
         data = json.load(file)
         print(data)
         data['projectId'] = str(project_id)
@@ -33,7 +34,7 @@ def submit_map_api(token, project_id: str, code:str):
         return response.json()
     if response.status_code == 202:
         print(f"SubmitJob accepted: {response.status_code}")
-        return None
+        return response.json()
     else:
         print(f"SubmitJob failed: {response.status_code} - {response.text}")
         return None
@@ -168,31 +169,33 @@ def get_status_str(status_int):
 
 
 if __name__ == "__main__":
-    nodes_max_values = [3000000]  # Add more values as needed
+    nodes_max_values = 3000000  # Add more values as needed
 
     projects = []
 
     client_id = f'{os.environ.get("client_id")}'
     # client_id = "a37dfef2-2623-4856-8319-132d20232c86"
 
-    # or you can directly put your credentials here to direct run
+     # or you can directly put your credentials here to direct run
     email             = f'{os.environ.get("email")}'
     password          = f'{os.environ.get("password")}'
     #
+    subdomains, centroid = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 100, 0, 100)
+    for subdomain in subdomains:
+        project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
+        project_type = 1
+        #local_folder = r'C:\AcceleratorTests\HundHammer'
 
-    project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
-    project_type = 1
-    #local_folder = r'C:\AcceleratorTests\HundHammer'
-
-    solver = 5
-    sweep = 100
-    config: Config = Config()
-    login: Login = Login(config)
-    token = login.login(email, password)
-    project_id = Project.Project.add_project(token, project_name, config)
-    print(project_id)
-
-    submit_map_api(token, project_id, f'{os.environ.get("code")}')
+        solver = 5
+        sweep = 100
+        config: Config = Config()
+        login: Login = Login(config)
+        token = login.login(email, password)
+        project_id = Project.Project.add_project(token, project_name, config)
+        path = "./windsim/domainDiscretization/jsonData/"
+        filepath = path + str(project_id) + '_subdomain_data.json'
+        GenerateJson.save_requests_as_json(subdomain, centroid, project_id, filepath)
+        submit_map_api(token,filepath, f'')
 
 
 
