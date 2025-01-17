@@ -1,5 +1,5 @@
 import json
-from FishNetUTM import createFishnet
+
 def save_requests_as_json(subdomain, centroid, project_id, filepath="subdomains_data.json"):
     subdomain_coords = subdomain["subdomain"]
     refinement_coords = subdomain["refinement_area"]

@@ -1,0 +1,988 @@
+{
+    "projectId": "a37dfef2-2623-4856-8319-132d20232c86",
+    "id": "2a6fd063-e344-4c0e-98b6-3d028bcc9097",
+    "clientId": "2a6fd063-e344-4c0e-98b6-3d028bcc9097",
+    "centerPoint": {
+        "latitude": 50.80710260461937,
+        "longitude": -58.15393159369107
+    },
+    "roughnessLegendDatasets": [
+        {
+            "901": {
+                "class": "901",
+                "color": [
+                    26,
+                    91,
+                    171
+                ],
+                "edited": false,
+                "category": "Water",
+                "description": "Water",
+                "roughness": 0.0003,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGOUil7NQC5gIlvnqOZRzaOaRzVTRTMAvg4BSJ87bFIAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "902": {
+                "class": "902",
+                "color": [
+                    53,
+                    131,
+                    33
+                ],
+                "edited": false,
+                "category": "Trees",
+                "description": "Trees",
+                "roughness": 0.5,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGM0bVZkIBcwka1zVPOo5lHNo5qpohkAbNYBARL+8dsAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "9021": {
+                "class": "9021",
+                "color": [
+                    53,
+                    130,
+                    32
+                ],
+                "edited": false,
+                "category": "Trees 1",
+                "description": "Trees 1",
+                "roughness": 0.5,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGM0bVJgIBcwka1zVPOo5lHNo5qpohkAY1MA/4cn6XAAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "9022": {
+                "class": "9022",
+                "color": [
+                    53,
+                    130,
+                    33
+                ],
+                "edited": false,
+                "category": "Trees 2",
+                "description": "Trees 2",
+                "roughness": 0.5,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGM0bVJkIBcwka1zVPOo5lHNo5qpohkAaBQBABG2imsAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "903": {
+                "class": "903",
+                "color": [
+                    135,
+                    209,
+                    158
+                ],
+                "edited": false,
+                "category": "Flooded Vegetation",
+                "description": "Flooded Vegetation",
+                "roughness": 0.1,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGNsvziPgVzARLbOUc2jmkc1j2qmimYAuPACHpppnPAAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "904": {
+                "class": "904",
+                "color": [
+                    254,
+                    219,
+                    91
+                ],
+                "edited": false,
+                "category": "Crops",
+                "description": "Crops",
+                "roughness": 0.05,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGP8dzuagVzARLbOUc2jmkc1j2qmimYA4LUCXHqLGosAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "9041": {
+                "class": "9041",
+                "color": [
+                    255,
+                    219,
+                    92
+                ],
+                "edited": false,
+                "category": "Crops 2",
+                "description": "Crops 2",
+                "roughness": 0.05,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGP8fzuGgVzARLbOUc2jmkc1j2qmimYA6jkCXj6LjmkAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "905": {
+                "class": "905",
+                "color": [
+                    237,
+                    2,
+                    42
+                ],
+                "edited": false,
+                "category": "Built Area",
+                "description": "Built Area",
+                "roughness": 0.5,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGN8y6TFQC5gIlvnqOZRzaOaRzVTRTMAnhQBQeR2Wb8AAAAASUVORK5CYII="
+            }
+        },
+        {
+            "906": {
+                "class": "906",
+                "color": [
+                    237,
+                    234,
+                    229
+                ],
+                "edited": false,
+                "category": "Bare Ground",
+                "description": "Bare Ground",
+                "roughness": 0.03,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGN8++opA7mAiWydo5pHNY9qHtVMFc0AZ1cC5LAaOGAAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "907": {
+                "class": "907",
+                "color": [
+                    242,
+                    249,
+                    255
+                ],
+                "edited": false,
+                "category": "Snow/Ice",
+                "description": "Snow/Ice",
+                "roughness": 0.001,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGP89PM/A7mAiWydo5pHNY9qHtVMFc0AQi0DEkMwmQgAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "9071": {
+                "class": "9071",
+                "color": [
+                    237,
+                    233,
+                    228
+                ],
+                "edited": false,
+                "category": "Snow/Ice 1",
+                "description": "Snow/Ice 1",
+                "roughness": 0.001,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGN8+/IJA7mAiWydo5pHNY9qHtVMFc0AXdQC4oofb1IAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "908": {
+                "class": "908",
+                "color": [
+                    200,
+                    200,
+                    200
+                ],
+                "edited": false,
+                "category": "Clouds",
+                "description": "Clouds",
+                "roughness": 0.03,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGM8ceIEA7mAiWydo5pHNY9qHtVMFc0Ai2kCgNZ6cAYAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "909": {
+                "class": "909",
+                "color": [
+                    239,
+                    207,
+                    168
+                ],
+                "edited": false,
+                "category": "Rangeland",
+                "description": "Rangeland",
+                "roughness": 0.05,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGN8f34FA7mAiWydo5pHNY9qHtVMFc0AzkwCjjIuK1UAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "910": {
+                "class": "910",
+                "color": [
+                    255,
+                    255,
+                    255
+                ],
+                "edited": false,
+                "category": "No Data",
+                "description": "No Data",
+                "roughness": 0.03,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGP8//8/A7mAiWydo5pHNY9qHtVMFc0AnKADJXYG/XsAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "111": {
+                "class": "111",
+                "color": [
+                    230,
+                    0,
+                    77
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; urban fabric;",
+                "description": "Continuous urban fabric",
+                "roughness": 1,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWNhoDJgoZmBzxh8/1NikBTDZkYUA6kFRg0cNXDUwFED6WwgrDyjmoHUAgBNXwQfMBLMBwAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "112": {
+                "class": "112",
+                "color": [
+                    255,
+                    0,
+                    0
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; urban fabric;",
+                "description": "Discontinuous urban fabric",
+                "roughness": 0.8,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4je3MsQ0AMAzDMBnI/y+nUz9wNvEAzsJSEsi0ss/Q0NDQ8CoMpBk+s+QCU2JjSpYAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "121": {
+                "class": "121",
+                "color": [
+                    204,
+                    77,
+                    242
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; industrial, commercial, and transport units;",
+                "description": "Industrial or commercial units",
+                "roughness": 0.7,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWM54/vpPwOVgMlmPkYWahkGA6MGjho4auCogaMG0spAk818jNQ0EABaqAVHYeLUzwAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "122": {
+                "class": "122",
+                "color": [
+                    204,
+                    0,
+                    0
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; industrial, commercial, and transport units;",
+                "description": "Road and rail networks and associated land",
+                "roughness": 0.1,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWM5w8Dwn4FKwISBgZGFWobBwKiBowaOGjhq4KiBtDLQhIGBkZoGAgC0sAKGzPTKvAAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "123": {
+                "class": "123",
+                "color": [
+                    230,
+                    204,
+                    204
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; industrial, commercial, and transport units;",
+                "description": "Port areas",
+                "roughness": 0.5,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWN5dubMfwYqASkTE0YWahkGA6MGjho4auCogaMG0spAKRMTRmoaCABZDwTUrIeAZABJRU5ErkJggg=="
+            }
+        },
+        {
+            "124": {
+                "class": "124",
+                "color": [
+                    230,
+                    204,
+                    230
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; industrial, commercial, and transport units;",
+                "description": "Airports",
+                "roughness": 0.01,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWN5dubZfwYqASkTKUYWahkGA6MGjho4auCogaMG0spAKRMpRmoaCABY2wS6cG5UjQAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "131": {
+                "class": "131",
+                "color": [
+                    166,
+                    0,
+                    204
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; mine, dump, and construction sites;",
+                "description": "Mineral extraction sites",
+                "roughness": 0.3,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNZxnDmPwOVQBSDCSMLtQyDgVEDRw0cNXDUwFEDaWVgFIMJIzUNBAAHGQPgBR4rtQAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "132": {
+                "class": "132",
+                "color": [
+                    166,
+                    77,
+                    0
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; mine, dump, and construction sites;",
+                "description": "Dump sites",
+                "roughness": 0.3,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNZ5svwn4FKIGozAyMLtQyDgVEDRw0cNXDUwFEDaWVg1GYGRmoaCAAJygRfafVrOgAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "133": {
+                "class": "133",
+                "color": [
+                    255,
+                    77,
+                    255
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; mine, dump, and construction sites;",
+                "description": "Construction sites",
+                "roughness": 0.3,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWP57/v/PwOVAONmRkYWahkGA6MGjho4auCogaMG0spAxs2MjNQ0EABZwgUHWnEwLgAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "141": {
+                "class": "141",
+                "color": [
+                    255,
+                    166,
+                    255
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; artificial, non-agricultural vegetated areas;",
+                "description": "Green urban areas",
+                "roughness": 0.8,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWP5v+z/fwYqAcYoRkYWahkGA6MGjho4auCogaMG0spAxihGRmoaCABYtwSuX2SnMwAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "142": {
+                "class": "142",
+                "color": [
+                    255,
+                    230,
+                    255
+                ],
+                "edited": false,
+                "category": "Artificial surfaces; artificial, non-agricultural vegetated areas;",
+                "description": "Sport and leisure facilities",
+                "roughness": 0.2,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWP5/+z/fwYqAUYpRkYWahkGA6MGjho4auCogaMG0spARilGRmoaCABX9wRuN6qUIAAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "211": {
+                "class": "211",
+                "color": [
+                    255,
+                    255,
+                    168
+                ],
+                "edited": false,
+                "category": "Agricultural areas; arable land;",
+                "description": "Non-irrigated arable land",
+                "roughness": 0.05,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWP5/3/FfwYqAUbGCEYWahkGA6MGjho4auCogaMG0spARsYIRmoaCABYWgSs5VEqOAAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "212": {
+                "class": "212",
+                "color": [
+                    255,
+                    255,
+                    0
+                ],
+                "edited": false,
+                "category": "Agricultural areas; arable land;",
+                "description": "Permanently irrigated land",
+                "roughness": 0.03,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4je3MMREAAAwCMf6u/i3TqQ7oRgRkbFkhICaVnYYNGzZs+BWCSIYLBlADVNm6i+sAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "213": {
+                "class": "213",
+                "color": [
+                    230,
+                    230,
+                    0
+                ],
+                "edited": false,
+                "category": "Agricultural areas; arable land;",
+                "description": "Rice fields",
+                "roughness": 0.03,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWN59ozhPwOVgJQUAyMLtQyDgVEDRw0cNXDUwFEDaWWglBQDIzUNBAAG/wOG2//k7wAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "221": {
+                "class": "221",
+                "color": [
+                    230,
+                    128,
+                    0
+                ],
+                "edited": false,
+                "category": "Agricultural areas; permanent crops;",
+                "description": "Vineyards",
+                "roughness": 0.3,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAC0lEQVQ4jWP4TzoGEmwaDAw0kAAEeDYd8UlSSGAAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "222": {
+                "class": "222",
+                "color": [
+                    242,
+                    166,
+                    77
+                ],
+                "edited": false,
+                "category": "Agricultural areas; permanent crops;",
+                "description": "Fruit trees and berry plantations",
+                "roughness": 0.4,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNZ1tP6z0BFQMhAYQEkFtLMABCJ6IpaQGNUMMIDBnMAMBnCPMNmS4bkAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "223": {
+                "class": "223",
+                "color": [
+                    230,
+                    166,
+                    0
+                ],
+                "edited": false,
+                "category": "Agricultural areas; permanent crops;",
+                "description": "Olive groves",
+                "roughness": 0.4,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAC0lEQVQ4jWP4TzpgOEDAAF9tBW11vJrgAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "231": {
+                "class": "231",
+                "color": [
+                    230,
+                    230,
+                    77
+                ],
+                "edited": false,
+                "category": "Agricultural areas; pastures;",
+                "description": "Pastures",
+                "roughness": 0.03,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNgGJ6zfwYqASkYKqJgqIGDcAhiCgMDSyEwAmKSXAyMBpKShMRMRCFgAADvw0n7UUqEAAAAAElFTkSuQmCC"
+            }
+        },
+        {
+            "241": {
+                "class": "241",
+                "color": [
+                    255,
+                    230,
+                    166
+                ],
+                "edited": false,
+                "category": "Agricultural areas; heterogeneous agricultural areas;",
+                "description": "Annual crops associated with permanent crops",
+                "roughness": 0.1,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MsREAMAwCMdj3qXh7tCMsBkoDLl262Kpmcx1IyEhISHgB8Lu6woAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "242": {
+                "class": "242",
+                "color": [
+                    255,
+                    230,
+                    77
+                ],
+                "edited": false,
+                "category": "Agricultural areas; heterogeneous agricultural areas;",
+                "description": "Complex cultivation patterns",
+                "roughness": 0.15,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MsREAMAwCMdjBsT7rQySwa5a2XbRLm6vZphDS0lLeRfx5GAAAP19KW8SD4+IQAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "243": {
+                "class": "243",
+                "color": [
+                    230,
+                    204,
+                    77
+                ],
+                "edited": false,
+                "category": "Agricultural areas; heterogeneous agricultural areas;",
+                "description": "Land principally occupied by agriculture, with significant areas of natural vegetation",
+                "roughness": 0.2,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MsQ0AMAjEMNT/jO8STWLFrFiDSmXS2bVaj6W1tbWZgbSkpKSmDQAxM+oBD7Wc1uAAAAAElFTkSuQmCC"
+            }
+        },
+        {
+            "244": {
+                "class": "244",
+                "color": [
+                    242,
+                    204,
+                    166
+                ],
+                "edited": false,
+                "category": "Agricultural areas; heterogeneous agricultural areas;",
+                "description": "Agro-forestry areas",
+                "roughness": 0.5,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MwQ3AIAwDYGvn/5ZmGJippFuL4RImpk1NKOKOjo6OjoODv+gA/NED16nHAAAAAElFTkSuQmCC"
+            }
+        },
+        {
+            "311": {
+                "class": "311",
+                "color": [
+                    128,
+                    255,
+                    0
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; forests;",
+                "description": "Broad-leaved forest",
+                "roughness": 1,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MsREAMAwCMdjBsQ7rUadWw2LfFlK7e21xtuBDS0lLeYxvgCCDoB/y6T3tAAAAAElFTkSuQmCC"
+            }
+        },
+        {
+            "312": {
+                "class": "312",
+                "color": [
+                    0,
+                    166,
+                    0
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; forests;",
+                "description": "Coniferous forest",
+                "roughness": 1.2,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MsQ3AMAgDQQnps/cwAJ7Vw8WLGEJSn3XZxhubi4uLi0t3tu9LMAwOckmMbRnQAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "313": {
+                "class": "313",
+                "color": [
+                    77,
+                    255,
+                    0
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; forests;",
+                "description": "Mixed forest",
+                "roughness": 1.1,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MsQ0AMAgDQbnwqWmOJMClGs9amjsl6/uxGp6uqqurqxtIAAwDocD8O/eERAAAAAElFTkSuQmCC"
+            }
+        },
+        {
+            "321": {
+                "class": "321",
+                "color": [
+                    204,
+                    242,
+                    77
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; scrub and/or herbaceous vegetation associations;",
+                "description": "Natural grasslands",
+                "roughness": 0.03,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MoQ3AIADAQCnCUj7euBIsqX7bPhq6bdtzaxYQESk5OjrI0DNbizQcoJ1EAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "322": {
+                "class": "322",
+                "color": [
+                    166,
+                    255,
+                    128
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; scrub and/or herbaceous vegetation associations;",
+                "description": "Moors and heathland",
+                "roughness": 0.05,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MsQ2AIBAFwOBXGz9wl+gAI2td0bGDRl2zywWBgYGBoZs29YcDE2VAQChVYUGeJMQYAAAAAElFTkSuQmCC"
+            }
+        },
+        {
+            "323": {
+                "class": "323",
+                "color": [
+                    166,
+                    230,
+                    77
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; scrub and/or herbaceous vegetation associations;",
+                "description": "Sclerophyllous vegetation",
+                "roughness": 0.07,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MsQ3AIAgDQLj+v72McyVpZRdO+62PaxZVmFz7d+/evXr17t///7Ba2IyMCKQXTMhBioEAAAAAElFTkSuQmCC"
+            }
+        },
+        {
+            "324": {
+                "class": "324",
+                "color": [
+                    166,
+                    242,
+                    0
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; scrub and/or herbaceous vegetation associations;",
+                "description": "Transitional woodland, shrub",
+                "roughness": 0.4,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MsQ0AIAgDQCXJvTujrMDMBELKDDc7RmDSDbx8eTGxub09PTy81nzPfHBwAA3cc+QzwdTBcAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "331": {
+                "class": "331",
+                "color": [
+                    230,
+                    230,
+                    230
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; open spaces with little or no vegetation;",
+                "description": "Beaches, dunes, sands",
+                "roughness": 0.003,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MMQ0AIAwEUPuvftO7CMVFVpSyLsU9YbGxub29v//VL79exYPTyw++++XIAAoDhD6mHyVgIAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "332": {
+                "class": "332",
+                "color": [
+                    204,
+                    204,
+                    204
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; open spaces with little or no vegetation;",
+                "description": "Bare rocks",
+                "roughness": 0.05,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MMQ0AIAwEUPuvftMZtWhJhbKKU5bKsbG5u3bt27dv//VOpUOGDRs2bNiwYMHApBDMRickniwKOAAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "333": {
+                "class": "333",
+                "color": [
+                    204,
+                    255,
+                    204
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; open spaces with little or no vegetation;",
+                "description": "Sparsely vegetated areas",
+                "roughness": 0.03,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MMQ0AIAwEUPuv/fMwhMy2U1dN0vRUaqtrY2MjKysrKysravr1++fPny5cuX79+fPnz48eXLly9fPnz48ePCBAIGhZmZmZmZmfTIVrEi836EkpwAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "334": {
+                "class": "334",
+                "color": [
+                    0,
+                    0,
+                    0
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; open spaces with little or no vegetation;",
+                "description": "Burnt areas",
+                "roughness": 0.2,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWP8z5kxgcDAwMCA7ify/6VgcDAwMDAwwDoBl3KQ6bUv2QAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "335": {
+                "class": "335",
+                "color": [
+                    166,
+                    230,
+                    204
+                ],
+                "edited": false,
+                "category": "Forest and semi natural areas; open spaces with little or no vegetation;",
+                "description": "Glaciers and perpetual snow",
+                "roughness": 0.005,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAJUlEQVQ4jWNgoBXg/BPQLIjUlNA0K8akmNBqYFAF.iBR4HYcN0AAAAASUVORK5CYII="
+            }
+        },
+        {
+            "411": {
+                "class": "411",
+                "color": [
+                    166,
+                    166,
+                    255
+                ],
+                "edited": false,
+                "category": "Wetlands; inland wetlands;",
+                "description": "Inland marshes",
+                "roughness": 0.05,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4je3MQQ0AIAwDsPff3ZvINCqyZAlKc6xyVZWVlZWVtb+3bt69ev3779+3bt27fwgODwEiaMmUUeVQAAAAAElFTkSuQmCC"
+            }
+        },
+        {
+            "412": {
+                "class": "412",
+                "color": [
+                    77,
+                    77,
+                    255
+                ],
+                "edited": false,
+                "category": "Wetlands; inland wetlands;",
+                "description": "Peat bogs",
+                "roughness": 0.03,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAANUlEQVQ4jWPJy8v7z0BFwMLAwMBw//5EqhimqJgPMZCaYNTAUQNHDRw1cNRAJAMVFfOpZiAAejQGS/SeGPoAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "421": {
+                "class": "421",
+                "color": [
+                    204,
+                    204,
+                    255
+                ],
+                "edited": false,
+                "category": "Wetlands; maritime wetlands;",
+                "description": "Salt marshes",
+                "roughness": 0.02,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWM5c+b/fwYqARMTRkYWahkGA6MGjho4auCogaMG0spAExNGRmoaCABZEQS7HHS6NQAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "422": {
+                "class": "422",
+                "color": [
+                    230,
+                    230,
+                    255
+                ],
+                "edited": false,
+                "category": "Wetlands; maritime wetlands;",
+                "description": "Salines",
+                "roughness": 0.005,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWN59uz/fwYqASkpRkYWahkGA6MGjho4auCogaMG0spAKSlGRmoaCABYWwSHduWovAAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "423": {
+                "class": "423",
+                "color": [
+                    166,
+                    166,
+                    230
+                ],
+                "edited": false,
+                "category": "Wetlands; maritime wetlands;",
+                "description": "Intertidal flats",
+                "roughness": 0.0001,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALUlEQVQ4jWNZtuzZfwYqgagoKUYWahkGA6MGjho4auCogaMG0srAqCgpRmoaCABaTQUgQFscjAAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "511": {
+                "class": "511",
+                "color": [
+                    0,
+                    204,
+                    242
+                ],
+                "edited": false,
+                "category": "Water bodies; inland waters;",
+                "description": "Water courses",
+                "roughness": 0.0001,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNhOPPpPwO1gAkfIwvVDIOCUQNHDRw1cNTAUQNpZqAJHyM1DQQABQEDlKFGgdkAAAAASUVORK5CYII="
+            }
+        },
+        {
+            "512": {
+                "class": "512",
+                "color": [
+                    128,
+                    242,
+                    230
+                ],
+                "edited": false,
+                "category": "Water bodies; inland waters;",
+                "description": "Water Bodies",
+                "roughness": 0.0001,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNp+PTsPwOVQAOfFCMLtQyDgVEDRw0cNXDUwFEDaWVgA58UIzUNBABaAQT69OulewAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "521": {
+                "class": "521",
+                "color": [
+                    0,
+                    255,
+                    166
+                ],
+                "edited": false,
+                "category": "Water bodies; marine waters;",
+                "description": "Coastal lagoons",
+                "roughness": 0.0001,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALElEQVQ4jWNh+L/sPwO1AGMUIwvVDIOCUQNHDRw1cNTAUQNpZiBjFCM1DQQABQADrf7Qq74AAAAASUVORK5CYII="
+            }
+        },
+        {
+            "522": {
+                "class": "522",
+                "color": [
+                    166,
+                    255,
+                    230
+                ],
+                "edited": false,
+                "category": "Water bodies; marine waters;",
+                "description": "Estuaries",
+                "roughness": 0.0001,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWNZ9v/ZfwYqgShGKUYWahkGA6MGjho4auCogaMG0srAKEYpRmoaCABZQgTHAlheDQAAAABJRU5ErkJggg=="
+            }
+        },
+        {
+            "523": {
+                "class": "523",
+                "color": [
+                    230,
+                    242,
+                    255
+                ],
+                "edited": false,
+                "category": "Water bodies; marine waters;",
+                "description": "Sea and ocean",
+                "roughness": 0.0001,
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWN59un/fwYqASk+RkYWahkGA6MGjho4auCogaMG0spAKT5GRmoaCABYNwR7IHyFAQAAAABJRU5ErkJggg=="
+            }
+        }
+    ],
+    "elevation": 0,
+    "roughness": 0,
+    "modelBufferDistance": 0,
+    "pointsBufferDistance": 0,
+    "maximumArea": {
+        "coordinates": [
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -242720.03615036944
+            },
+            {
+                "latitude": 4896148.329304807,
+                "longitude": -242720.03615036944
+            },
+            {
+                "latitude": 4896148.329304807,
+                "longitude": -212720.03615036944
+            },
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -212720.03615036944
+            },
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -242720.03615036944
+            }
+        ]
+    },
+    "modelArea": {
+        "coordinates": [
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -242720.03615036944
+            },
+            {
+                "latitude": 4896148.329304807,
+                "longitude": -242720.03615036944
+            },
+            {
+                "latitude": 4896148.329304807,
+                "longitude": -212720.03615036944
+            },
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -212720.03615036944
+            },
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -242720.03615036944
+            }
+        ]
+    },
+    "points": [],
+    "pointsArea": {
+        "coordinates": [
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -242720.03615036944
+            },
+            {
+                "latitude": 4896148.329304807,
+                "longitude": -242720.03615036944
+            },
+            {
+                "latitude": 4896148.329304807,
+                "longitude": -212720.03615036944
+            },
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -212720.03615036944
+            },
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -242720.03615036944
+            }
+        ]
+    },
+    "simulationDomain": {
+        "coordinates": [
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -242720.03615036944
+            },
+            {
+                "latitude": 4896148.329304807,
+                "longitude": -242720.03615036944
+            },
+            {
+                "latitude": 4896148.329304807,
+                "longitude": -212720.03615036944
+            },
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -212720.03615036944
+            },
+            {
+                "latitude": 4866148.329304807,
+                "longitude": -242720.03615036944
+            }
+        ]
+    },
+    "extensionInPixels": {
+        "width": 300,
+        "height": 300
+    },
+    "url": "",
+    "RoughnessSource": "Sentinel2_10m_LandCover"
+}

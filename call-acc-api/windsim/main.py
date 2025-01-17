@@ -11,8 +11,8 @@ from azure.storage.fileshare import ShareFileClient, ShareDirectoryClient
 from .login.Login import Login
 from .project import Project
 import os
-from FishNetUTM import CreateFishnet
-from GenerateJson import save_requests_as_json
+from domainDiscretization.FishNetUTM import createFishnet
+from map.GenerateJson import save_requests_as_json
 
 def submit_map_api(token, project_id: str, code:str):
     url = f"https://func-mapapi-test-westeurope.azurewebsites.net/api/Terrain/GenerateGwsFile?code={code}"
@@ -176,24 +176,23 @@ if __name__ == "__main__":
     client_id = f'{os.environ.get("client_id")}'
     # client_id = "a37dfef2-2623-4856-8319-132d20232c86"
 
-    # or you can directly put your credentials here to direct run
+     # or you can directly put your credentials here to direct run
     email             = f'{os.environ.get("email")}'
     password          = f'{os.environ.get("password")}'
     #
-
-    project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
-    project_type = 1
-    #local_folder = r'C:\AcceleratorTests\HundHammer'
-
-    solver = 5
-    sweep = 100
-    config: Config = Config()
-    login: Login = Login(config)
-    token = login.login(email, password)
-    project_id = Project.Project.add_project(token, project_name, config)
-    subdomains, centroid = createFishnet("StantecAreas/StantecAreas.shp", square_size=32, overlap_km=2, refinement_km=30)
+    subdomains, centroid = createFishnet("domainDiscretization/StantecAreas/StantecAreas.shp", square_size=32, overlap_km=2, refinement_km=30)
     for subdomain in subdomains:
-        path = "/jsonData/"
+        project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
+        project_type = 1
+        #local_folder = r'C:\AcceleratorTests\HundHammer'
+
+        solver = 5
+        sweep = 100
+        config: Config = Config()
+        login: Login = Login(config)
+        token = login.login(email, password)
+        project_id = Project.Project.add_project(token, project_name, config)
+        path = "domainDiscretization/jsonData/"
         filepath = path + project_id + '_subdomain_data.json'
         save_requests_as_json(subdomain, centroid, project_id, filepath)
         submit_map_api(token,filepath, f'')
