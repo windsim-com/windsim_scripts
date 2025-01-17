@@ -15,93 +15,6 @@ from .map import MapUtil
 from .domainDiscretization.FishNetUTM import FishNetUTM
 from .map.GenerateJson import GenerateJson
 
-
-
-
-
-
-
-def get_project_upload_uri(token, project_id):
-    url = f"{Config.Config.API_BASE_URL}/api/DesktopCloudHybridProject/GetProjectUploadUri/{project_id}"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}"
-    }
-
-    print(url)
-    response = requests.get(url, headers=headers, verify=False)
-
-    if response.status_code == 200:
-        print(response.text)
-        return response.text
-    else:
-        print(f"GetProjectUploadUri failed: {response.status_code} - {response.text}")
-        return None
-
-def generate_file_sas_url(sas_url, file_path):
-    url_parts = urlparse(sas_url)
-    return urlunparse((url_parts.scheme, url_parts.netloc, f"{url_parts.path}/{file_path}", url_parts.params, url_parts.query, url_parts.fragment))
-
-
-def submit_job(token, project_id, layout_file_name, project_file_name, cpu_core_count, memory_size_in_gb):
-    url = f"{Config.Config.API_BASE_URL}/api/DesktopCloudHybridProject/SubmitJob"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}"
-    }
-    data = {
-        "projectId": project_id,
-        "layoutFileName": layout_file_name,
-        "projectFileName": project_file_name,
-        "cpuCoreCount": cpu_core_count,
-        "memorySizeInGB": memory_size_in_gb
-    }
-    response = requests.post(url, json=data, headers=headers, verify=False)
-
-    if response.status_code == 200:
-        print(response.json())
-        return response.json()
-    if response.status_code == 202:
-        print(f"SubmitJob accepted: {response.status_code}")
-        return None
-    else:
-        print(f"SubmitJob failed: {response.status_code} - {response.text}")
-        return None
-
-def get_jobs_status(token, project_id):
-    url = f"{Config.Config.API_BASE_URL}/api/Project/GetJobsStatus/{project_id}"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}"
-    }
-    response = requests.get(url, headers=headers, verify=False)
-
-    if response.status_code == 200:
-        #print (response.json())
-        return response.json()
-    else:
-        print(f"GetJobsStatus failed: {response.status_code} - {response.text}")
-        return None
-
-def get_project_output_uri(token, project_id):
-    url = f"{Config.Config.API_BASE_URL}/api/Project/GetProjectOutputUri/{project_id}"
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {token}"
-    }
-    while True:
-        response = requests.get(url, headers=headers, verify=False)
-
-        if response.status_code == 200:
-            return response.text.strip('"')  # Remove double quotes from the response
-
-        if response.status_code == 404:
-            print("Output file not available yet, waiting...")
-            time.sleep(10)  # Wait for 10 seconds before checking again
-        else:
-            print(f"GetProjectOutputUri failed: {response.status_code} - {response.text}")
-            return None
-
 status_dict = {
     0: 'None',
     1: 'Created',
@@ -110,16 +23,13 @@ status_dict = {
     4: 'Failed',
     5: 'Cancelled',
 }
+nodes_max_values = 3000000  # Add more values as needed
+
 
 def get_status_str(status_int):
     return status_dict.get(status_int, 'Unknown')
 
-
-
 if __name__ == "__main__":
-    nodes_max_values = 3000000  # Add more values as needed
-
-    projects = []
 
     client_id = f'{os.environ.get("client_id")}'
     # client_id = "a37dfef2-2623-4856-8319-132d20232c86"
@@ -143,7 +53,7 @@ if __name__ == "__main__":
         path = "./windsim/domainDiscretization/jsonData/"
         filepath = path + str(project_id) + '_subdomain_data.json'
         GenerateJson.save_requests_as_json(subdomain, centroid, project_id, filepath)
-        MapUtil.MapUtil.submit_map_api(token,filepath, f'')
+        MapUtil.MapUtil.submit_map_api(token,filepath, f'{os.environ.get("functionCode")}')
 
 
 

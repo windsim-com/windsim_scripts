@@ -41,3 +41,19 @@ class ModelUtil:
         else:
             print(f"SubmitJob failed: {response.status_code} - {response.text}")
             return None
+
+    @staticmethod
+    def get_jobs_status(token, project_id):
+        url = f"{Config.Config.API_BASE_URL}/api/Project/GetJobsStatus/{project_id}"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {token}"
+        }
+        response = requests.get(url, headers=headers, verify=False)
+
+        if response.status_code == 200:
+            #print (response.json())
+            return response.json()
+        else:
+            print(f"GetJobsStatus failed: {response.status_code} - {response.text}")
+            return None
