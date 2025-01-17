@@ -41,7 +41,7 @@ if __name__ == "__main__":
     project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
     project_type = 1
 
-    subdomains, centroid = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 100,
+    subdomains = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 100,
                                                     0, 100)
     # variables for wind fields
     solver = 5
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     filepath = path + str(project_id) + '_subdomain_data.json'
 
 
-    GenerateJson.save_requests_as_json(subdomains[0], centroid, project_id, filepath)
+    GenerateJson.save_requests_as_json(subdomains, project_id, filepath)
     MapUtil.MapUtil.submit_map_api(token, filepath, f'{os.environ.get("functionCode")}')
 
 # job_response = submit_job(token, str('de54e93c-d398-4723-abce-3b0b01af0455'), layout_file_name, 'HundhammerWithoutTerrain', 1, 1)

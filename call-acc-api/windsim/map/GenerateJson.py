@@ -3,9 +3,10 @@ import json
 class GenerateJson:
 
     @staticmethod
-    def save_requests_as_json(subdomain, centroid, project_id, filepath="subdomains_data.json"):
+    def save_requests_as_json(subdomain, project_id, filepath="subdomains_data.json"):
         subdomain_coords = subdomain["subdomain"]
         refinement_coords = subdomain["refinement_area"]
+        centroid = subdomain["centroid_subdomain"]
         roughness_legend_datasets = [
             {"901": {"class": "901", "color": [26, 91, 171], "edited": False, "category": "Water", "description": "Water", "roughness": 0.0003, "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGOUil7NQC5gIlvnqOZRzaOaRzVTRTMAvg4BSJ87bFIAAAAASUVORK5CYII="}},
             {"902": {"class": "902", "color": [53, 131, 33], "edited": False, "category": "Trees", "description": "Trees", "roughness": 0.5, "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAHUlEQVR4nGM0bVZkIBcwka1zVPOo5lHNo5qpohkAbNYBARL+8dsAAAAASUVORK5CYII="}},
@@ -67,8 +68,8 @@ class GenerateJson:
             {"523": {"class": "523", "color": [230, 242, 255], "edited": False, "category": "Water bodies; marine waters;", "description": "Sea and ocean", "roughness": 0.0001, "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAALklEQVQ4jWN59un/fwYqASk+RkYWahkGA6MGjho4auCogaMG0spAKT5GRmoaCABYNwR7IHyFAQAAAABJRU5ErkJggg=="}}
         ]
         data = {
-            "projectId": "a37dfef2-2623-4856-8319-132d20232c86",
-            "id": "2a6fd063-e344-4c0e-98b6-3d028bcc9097",
+            "projectId": str(project_id),
+            "id": str(project_id),
             "clientId": "2a6fd063-e344-4c0e-98b6-3d028bcc9097",
             "centerPoint": {
                 "latitude": centroid.y,
