@@ -11,7 +11,8 @@ from azure.storage.fileshare import ShareFileClient, ShareDirectoryClient
 from .login.Login import Login
 from .project import Project
 import os
-
+from FishNetUTM import CreateFishnet
+from GenerateJson import save_requests_as_json
 
 def submit_map_api(token, project_id: str, code:str):
     url = f"https://func-mapapi-test-westeurope.azurewebsites.net/api/Terrain/GenerateGwsFile?code={code}"
@@ -19,7 +20,7 @@ def submit_map_api(token, project_id: str, code:str):
         "Content-Type": "application/json; charset=utf-8",
         "Authorization": f"Bearer {token}"
     }
-    with open('../map_request.json', 'r') as file:
+    with open('./map_request.json', 'r') as file:
         data = json.load(file)
         print(data)
         data['projectId'] = str(project_id)
@@ -33,7 +34,7 @@ def submit_map_api(token, project_id: str, code:str):
         return response.json()
     if response.status_code == 202:
         print(f"SubmitJob accepted: {response.status_code}")
-        return None
+        return response.json()
     else:
         print(f"SubmitJob failed: {response.status_code} - {response.text}")
         return None
@@ -168,7 +169,7 @@ def get_status_str(status_int):
 
 
 if __name__ == "__main__":
-    nodes_max_values = [3000000]  # Add more values as needed
+    nodes_max_values = 3000000  # Add more values as needed
 
     projects = []
 
@@ -190,9 +191,12 @@ if __name__ == "__main__":
     login: Login = Login(config)
     token = login.login(email, password)
     project_id = Project.Project.add_project(token, project_name, config)
-    print(project_id)
-
-    submit_map_api(token, project_id, f'{os.environ.get("code")}')
+    subdomains, centroid = createFishnet("StantecAreas/StantecAreas.shp", square_size=32, overlap_km=2, refinement_km=30)
+    for subdomain in subdomains:
+        path = "/jsonData/"
+        filepath = path + project_id + '_subdomain_data.json'
+        save_requests_as_json(subdomain, centroid, project_id, filepath)
+        submit_map_api(token,filepath, f'')
 
 
 
