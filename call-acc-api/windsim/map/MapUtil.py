@@ -6,17 +6,15 @@ from ..animation.Animation import Animation
 
 class MapUtil:
     @staticmethod
-    def submit_map_api(token, project_id: str, code: str):
+    def submit_map_api(token, requestFilePath: str, code: str):
         animation = Animation()
         url = f"https://func-mapapi-test-westeurope.azurewebsites.net/api/Terrain/GenerateGwsFile?code={code}"
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {token}"
         }
-        with open('./map_request.json', 'r') as file:
+        with open(requestFilePath, 'r') as file:
             data = json.load(file)
-            data['projectId'] = project_id
-            data['id'] = project_id
 
             # spinner = Animation()
             # spinner.start_spinner("Generating GWS file...")  # Start the spinner

@@ -6,6 +6,7 @@ from urllib.parse import urlparse, urlunparse
 import urllib3
 from .apiconfig.Config import Config
 from .project import Project
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from azure.storage.fileshare import ShareFileClient, ShareDirectoryClient
 from .login.Login import Login
@@ -29,43 +30,46 @@ nodes_max_values = 3000000  # Add more values as needed
 def get_status_str(status_int):
     return status_dict.get(status_int, 'Unknown')
 
+
 if __name__ == "__main__":
-
+    # 0. get credentials from environment variables
     client_id = f'{os.environ.get("client_id")}'
-    # client_id = "a37dfef2-2623-4856-8319-132d20232c86"
-
-     # or you can directly put your credentials here to direct run
-    email             = f'{os.environ.get("email")}'
-    password          = f'{os.environ.get("password")}'
+    email = f'{os.environ.get("email")}'
+    password = f'{os.environ.get("password")}'
     #
-    subdomains, centroid = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 100, 0, 100)
-    for subdomain in subdomains:
-        project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
-        project_type = 1
-        #local_folder = r'C:\AcceleratorTests\HundHammer'
+    # for subdomain in subdomains:
+    project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
+    project_type = 1
 
-        solver = 5
-        sweep = 100
-        config: Config = Config()
-        login: Login = Login(config)
-        token = login.login(email, password)
-        project_id = Project.Project.add_project(token, project_name, config)
-        path = "./windsim/domainDiscretization/jsonData/"
-        filepath = path + str(project_id) + '_subdomain_data.json'
-        GenerateJson.save_requests_as_json(subdomain, centroid, project_id, filepath)
-        MapUtil.MapUtil.submit_map_api(token,filepath, f'{os.environ.get("functionCode")}')
+    subdomains, centroid = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 100,
+                                                    0, 100)
+    # variables for wind fields
+    solver = 5
+    sweep = 100
+    config: Config = Config()
+
+    # 1. login
+    login: Login = Login(config)
+    token = login.login(email, password)
+    print(token)
+
+    # 2. Create projects
+    project_id = Project.Project.add_project(token, project_name, config)
+    path = "./windsim/domainDiscretization/jsonData/"
+
+    # 3. Save subdomains as json
+    filepath = path + str(project_id) + '_subdomain_data.json'
 
 
+    GenerateJson.save_requests_as_json(subdomains[0], centroid, project_id, filepath)
+    MapUtil.MapUtil.submit_map_api(token, filepath, f'{os.environ.get("functionCode")}')
+
+# job_response = submit_job(token, str('de54e93c-d398-4723-abce-3b0b01af0455'), layout_file_name, 'HundhammerWithoutTerrain', 1, 1)
 
 
+# print(job_response)
 
-
-    #job_response = submit_job(token, str('de54e93c-d398-4723-abce-3b0b01af0455'), layout_file_name, 'HundhammerWithoutTerrain', 1, 1)
-
-
-    #print(job_response)
-
-    #print(token)
+# print(token)
 
 ##    for nodes_max in nodes_max_values:
 ##        # Your existing initialization code
