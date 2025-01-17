@@ -1,3 +1,5 @@
 requests
 pydantic
 pydantic-settings
+geopandas
+azure-storage-file-share

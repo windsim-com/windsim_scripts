@@ -11,8 +11,8 @@ from azure.storage.fileshare import ShareFileClient, ShareDirectoryClient
 from .login.Login import Login
 from .project import Project
 import os
-from domainDiscretization.FishNetUTM import createFishnet
-from map.GenerateJson import save_requests_as_json
+from .domainDiscretization.FishNetUTM import FishNetUTM
+from .map.GenerateJson import GenerateJson
 
 def submit_map_api(token, project_id: str, code:str):
     url = f"https://func-mapapi-test-westeurope.azurewebsites.net/api/Terrain/GenerateGwsFile?code={code}"
@@ -180,7 +180,7 @@ if __name__ == "__main__":
     email             = f'{os.environ.get("email")}'
     password          = f'{os.environ.get("password")}'
     #
-    subdomains, centroid = createFishnet("domainDiscretization/StantecAreas/StantecAreas.shp", square_size=32, overlap_km=2, refinement_km=30)
+    subdomains, centroid = FishNetUTM.createFishnet("./windsim/domainDiscretization/StantecAreas/StantecAreas.shp", 100, 0, 100)
     for subdomain in subdomains:
         project_name = 'STANTEC-' + datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S-%fZ")
         project_type = 1
@@ -192,9 +192,9 @@ if __name__ == "__main__":
         login: Login = Login(config)
         token = login.login(email, password)
         project_id = Project.Project.add_project(token, project_name, config)
-        path = "domainDiscretization/jsonData/"
-        filepath = path + project_id + '_subdomain_data.json'
-        save_requests_as_json(subdomain, centroid, project_id, filepath)
+        path = "./windsim/domainDiscretization/jsonData/"
+        filepath = path + str(project_id) + '_subdomain_data.json'
+        GenerateJson.save_requests_as_json(subdomain, centroid, project_id, filepath)
         submit_map_api(token,filepath, f'')
 
 
